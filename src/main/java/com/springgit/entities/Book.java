@@ -2,11 +2,18 @@ package com.springgit.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 public class Book {
 
+	@Id
 	int bookId;
 	String title;
 	String author;
+	@OneToOne
+	@JoinColumn(referencedColumnName = "categoryId",name="category_id")
 	Category category;
 	String description;
 	String isbn;

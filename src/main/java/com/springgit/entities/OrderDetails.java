@@ -1,8 +1,15 @@
 package com.springgit.entities;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 public class OrderDetails {
 
+	@OneToOne
+	@JoinColumn(referencedColumnName = "bookId",name="book_id")
 	Book book;
+	@OneToOne
+	@JoinColumn(referencedColumnName = "orderId",name="order_id")
 	BookOrder bookOrder;
 	int quantity;
 	double subtotal;

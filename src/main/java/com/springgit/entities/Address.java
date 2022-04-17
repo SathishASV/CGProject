@@ -1,7 +1,10 @@
 package com.springgit.entities;
 
+import javax.persistence.Id;
+
 public class Address {
 
+	@Id
 	int addressId;
 	String address;
 	String city;

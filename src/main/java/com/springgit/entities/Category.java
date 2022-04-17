@@ -1,7 +1,10 @@
 package com.springgit.entities;
 
+import javax.persistence.Id;
+
 public class Category {
 
+	@Id
 	int categoryId;
 	String categoryName;
 	public Category() {

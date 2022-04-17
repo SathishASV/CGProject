@@ -2,10 +2,17 @@ package com.springgit.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 public class Review {
 
 	int reviewId;
+	@OneToOne
+	@JoinColumn(referencedColumnName = "bookId",name="book_id")
 	Book book;
+	@OneToOne
+	@JoinColumn(referencedColumnName = "customerId",name="customer_id")
 	Customer customer;
 	String headLine;
 	String comment;

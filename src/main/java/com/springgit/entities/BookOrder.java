@@ -2,13 +2,22 @@ package com.springgit.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 public class BookOrder {
 
+	@Id
 	int OrderId;
+	@OneToOne
+	@JoinColumn(referencedColumnName = "customerId")
 	Customer customer;
 	LocalDate orderDate;
 	double orderTotal;
 	String status;
+	@OneToOne
+	@JoinColumn(referencedColumnName = "addressId")
 	Address shippingAddress;
 	String paymentMethod;
 	String recepientName;
