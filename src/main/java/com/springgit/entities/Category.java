@@ -1,7 +1,11 @@
 package com.springgit.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="Category")
 public class Category {
 
 	@Id

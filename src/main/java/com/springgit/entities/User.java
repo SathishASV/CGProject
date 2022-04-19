@@ -1,18 +1,25 @@
 package com.springgit.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="User_table")
 public class User {
 
+	@Id
 	int userId;
-	String email;
+	String userName;
 	String password;
 	String role;
 	public User() {
 		super();
 	}
-	public User(int userId, String email, String password, String role) {
+	public User(int userId, String userName, String password, String role) {
 		super();
 		this.userId = userId;
-		this.email = email;
+		this.userName = userName;
 		this.password = password;
 		this.role = role;
 	}
@@ -22,11 +29,11 @@ public class User {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	public String getEmail() {
-		return email;
+	public String getUserName() {
+		return userName;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getPassword() {
 		return password;
@@ -42,9 +49,7 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", email=" + email + ", password=" + password + ", role=" + role + "]";
+		return "User [userId=" + userId + ", userName=" + userName + ", password=" + password + ", role=" + role + "]";
 	}
-	
-	
 	
 }
