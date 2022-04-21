@@ -13,11 +13,13 @@ import javax.persistence.Table;
 public class OrderDetails implements Serializable{
 
 	@Id
+	int orderId;
+	
 	@OneToOne
 	@JoinColumn(referencedColumnName = "bookId",name="book_id")
 	Book book;
 	@OneToOne
-	@JoinColumn(referencedColumnName = "orderId",name="order_id")
+	@JoinColumn(referencedColumnName = "orderId",name="bookorder_id")
 	BookOrder bookOrder;
 	int quantity;
 	double subtotal;
@@ -54,6 +56,12 @@ public class OrderDetails implements Serializable{
 	}
 	public void setSubtotal(double subtotal) {
 		this.subtotal = subtotal;
+	}
+	public int getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
 	}
 	@Override
 	public String toString() {

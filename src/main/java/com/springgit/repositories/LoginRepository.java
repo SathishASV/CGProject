@@ -2,11 +2,10 @@ package com.springgit.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.springgit.services.OrderServiceImpl;
 
+import com.springgit.entities.User;
 
 @Repository
-public interface OrderRepositoryImpl extends JpaRepository<OrderServiceImpl,Integer>{
+public interface LoginRepository extends JpaRepository<User, Integer>{
 
-	
 }
